@@ -45,9 +45,9 @@ import {Carousel} from "./Carousel";
         :host .container .carousel ::content >>> .item-carousel {
             display: block;
             position: absolute;
-            border:1px solid black;
+            border:none;
             width: 100%;
-            height: 100%;
+            height: 880px;
             text-align: center;
             transform-style: preserve-3d;
             opacity: 0;
@@ -81,6 +81,8 @@ import {Carousel} from "./Carousel";
     '  <div class="carousel" #carousel  (domChange)="onDomChange($event)">\n' +
     '    <ng-content  select=".item-carousel"></ng-content>\n' +
     '  </div>\n' +
+    '  <button (click)="slidePrev();"class="pull-left btnSig" id="btnSug"><span class="glyphicon glyphicon-chevron-left"></span></button>\n'+
+    '  <button (click)="slideNext();" class="pull-right btnAtras" id="btnSug"><span class="glyphicon glyphicon-chevron-right"></span></button>\n'+   
     '</div>',
 })
 
@@ -171,6 +173,8 @@ export class CarouselComponent implements OnInit,OnChanges,AfterViewInit {
     }
 
   }
+  //Botones
+  
 
   ngAfterViewInit() {
     this.initEventsPan();
@@ -362,7 +366,7 @@ export class CarouselComponent implements OnInit,OnChanges,AfterViewInit {
       }
       if( height > this.carousel.maxHeigthSize){
         this.carousel.maxHeigthSize = height;
-          this.carousel.totalWidth = this.carousel.items.length*this.carousel.maxHeigthSize;
+          this.carousel.totalHeigth = this.carousel.items.length*this.carousel.maxHeigthSize;
       }
     });
     this.setContainerWithMaxSize();

@@ -15,6 +15,7 @@ export class Carousel{
   private _maxHeigthSize = 0;
   private _maxDegree = 0;
   private _totalWidth = 0;
+  private _totalHeight = 0;
   private _isHorizontal= false;
   private _items = [];
   private _degreesSlides = [];
@@ -87,6 +88,14 @@ export class Carousel{
 
   set totalWidth(value: number) {
     this._totalWidth = value;
+  }
+
+  get totalHeigth(): number{
+    return this._totalHeight;
+  }
+  
+  set totalHeigth(value:number){
+    this._totalHeight = value;
   }
 
   get items(): any {
