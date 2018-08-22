@@ -47,7 +47,7 @@ import {Carousel} from "./Carousel";
             position: absolute;
             border:none;
             width: 100%;
-            height: 880px;
+            height: 100%;
             text-align: center;
             transform-style: preserve-3d;
             opacity: 0;
